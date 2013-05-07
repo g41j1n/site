@@ -1,0 +1,256 @@
+@import "__vendor.styl"
+
+/* ====================== FONT-FACE ====================== */
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700")
+
+THEME        = #008FD5
+BACKGROUND   = #e5e5e5
+BOX          = #d5d5d5
+BOX_DARK     = #444
+LUNGO        = #187fcb
+QUOJS        = #ffc801
+MONOCLE      = #9966FF
+APPNIMA      = #ff7640
+SLIDUS       = #3fb58e
+
+body
+  font-size: 1em
+  line-height: 1.2
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica
+  font-weight: 300
+  background-color: BACKGROUND
+  height: 100%
+  width: 100%
+
+  & h1
+    font-size: 64px
+    line-height: 1.5em
+  & h2
+    font-size: 56px
+    line-height: 1.6em
+  & h6
+    margin-bottom: 10px
+
+  & > footer
+    padding-top: 0px !important
+    display: none
+
+    & .row
+      border-radius 4px
+      color: #fff
+    & .logo
+      height: 16px
+      margin-left: 4px
+      margin-bottom: -4px
+
+  /* ====================== BACKGROUNDS ====================== */
+  & .bck
+    &.theme
+      background: THEME
+      animation bck_palette 16s infinite
+    &.dark
+      background-color: BOX
+    &.lungo
+      background-color: LUNGO
+    &.quojs
+      background-color: QUOJS
+    &.monocle
+      background-color: MONOCLE
+    &.appnima
+      background-color: APPNIMA
+    &.slidus
+      background-color: SLIDUS
+    &.darkest
+      background-color: BOX_DARK
+
+  /* ====================== TEXT ====================== */
+  & .text
+    &.shadow
+      text-shadow 0 1px 0 rgba(255,255,255,0.5)
+    &.color
+      &.white
+        color: #fff
+      &.theme
+        color: THEME
+        animation color_palette 16s infinite
+
+  /* ====================== BUTTONS ====================== */
+  & .button, button
+    background-color: #333
+    color: white
+    font-size: 16px
+    &:active
+      box-shadow inset 0 0 128px rgba(0,0,0,0.25)
+
+  /* ====================== BUTTONS ====================== */
+  & :not(nav) > a:not(.button)
+    color: #fff
+    opacity: 0.9
+    &:hover, &:active
+      opacity: 1.0
+
+/* ====================== MASONRY ====================== */
+padding = 20px
+
+.masonry
+  line-height: 2.0em
+  & > *
+    width: size = 284px
+    height: size
+    overflow: hidden
+    font-size: 1.5em
+    line-height: 1.4em
+    color: #666
+    background-size: cover
+    margin-bottom: padding
+    border-radius 1px
+    display: block
+    visibility: hidden
+    opacity: 0
+
+    &.show
+      visibility: visible
+      transition opacity 750ms 0s
+      backface-visibility hidden
+      opacity: 1
+
+    &:nth-child(n+2)
+      transition-delay 750ms
+
+    &:not(.picture)
+      padding: padding
+
+    & > .tapquo
+      display: block
+      margin: 38% auto
+      height: 24%
+
+    &.folk
+      padding: 0px !important
+      cursor: pointer
+      & > img
+        transition all 200ms
+        &:hover
+          transform translateY(-50%)
+      & > .title
+        position: absolute
+        bottom: 0px
+        width: 100%
+        animation bck_palette 16s infinite
+        opacity: 0.75
+        padding: (padding / 2)
+        & > small
+          display: block
+          font-size: 15px
+
+    &.width, &.double
+      width: (size * 2) + 20
+
+    &.height, &.double
+      height: (size * 2) + 20
+
+    &.double
+      padding: (padding * 2)
+
+.logos
+  text-align: center
+  & > img
+    opacity: 0.4
+    height: 28px
+    margin: 24px 12px 10px 12px
+
+/* ==== Screen Bigger than 960px ==== */
+@media only screen and (min-width:1200px)
+  .masonry
+    padding-left: 2px
+
+/* ==== Screen 960px ==== */
+@media only screen and (min-width: 960px) and (max-width: 1199px)
+  .masonry
+    padding-left: 32px
+
+/* ==== Tablet (Smaller than 959px) ==== */
+@media only screen and (min-width: 768px) and (max-width: 959px)
+  .masonry
+    padding-left: 92px
+    & > *
+      &.hide.tablet
+        display: none
+        width: 0px !important
+        height: 0px !important
+        margin-bottom: 0px !important
+
+/* ==== Any phone ==== */
+@media only screen and (max-width: 767px)
+  body
+    font-size: 13px
+
+  .masonry
+    & > *
+      width: 300px !important
+      margin-bottom: (padding / 2) !important
+
+      & > h1
+        font-size: 1.5em
+        padding: (padding / 2)
+
+      & > h6
+        margin-bottom: 0
+
+      & > .tapquo
+        height: 48px
+        margin: 32px auto
+
+      &:not(.picture)
+        padding: (padding / 2)
+        height: auto
+
+      &.picture
+        &.width
+          height: 150px
+        &:not(.width)
+          height: 300px
+
+      &.folk
+        height: 64px
+        font-size: 1.2em
+        & > img
+          width: 64px
+
+      &.hide
+        height: 0px !important
+        margin-bottom: 0px !important
+
+
+/* ====================== MASONRY ====================== */
+@keyframes bck_palette
+  0%
+    background-color: THEME
+  10%
+    background-color: LUNGO
+  30%
+    background-color: QUOJS
+  50%
+    background-color: MONOCLE
+  70%
+    background-color: SLIDUS
+  90%
+    background-color: APPNIMA
+  100%
+    background-color: THEME
+
+@keyframes color_palette
+  0%
+    color: THEME
+  10%
+    color: LUNGO
+  30%
+    color: QUOJS
+  50%
+    color: MONOCLE
+  70%
+    color: SLIDUS
+  90%
+    color: APPNIMA
+  100%
+    color: THEME
