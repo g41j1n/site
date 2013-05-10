@@ -1,0 +1,163 @@
+@import "__constants.styl"
+
+#wall
+  line-height: 2.0em
+  & .box
+    width: size = 284px
+    height: size
+    overflow: hidden
+    font-size: 1.5em
+    color: #666
+    background-size: cover
+    border-radius BORDER-RADIUS
+    visibility: hidden
+    opacity: 0
+
+    &.show
+      visibility: visible
+      transition opacity TRANSITION
+      opacity: 1
+
+    &:nth-child(2)
+      transition-delay (TRANSITION * 1.5)
+    &:nth-child(n+3)
+      transition-delay (TRANSITION * 3)
+
+    & > .tapquo
+      display: block
+      margin: 38% auto
+      height: 24%
+
+    &.folk
+      padding: 0px !important
+      cursor: pointer
+      position: relative
+      & > img
+        transition all 200ms
+        &:hover
+          transform translateY(-50%)
+      & > .title
+        position: absolute
+        bottom: 0px
+        width: 100%
+        animation bck_palette 16s infinite
+        opacity: 0.75
+        padding: (PADDING / 2)
+        line-height: 1.0em
+        & > small
+          display: block
+          font-size: 15px
+
+
+
+    &.width, &.double
+      width: (size * 2) + 20
+
+    &.height, &.double
+      height: (size * 2) + 20
+
+    &.text
+      PAD = (PADDING * 1.25)
+      & > *:first-child
+        margin: PAD PAD (PAD / 2.5) PAD
+        font-size: 1.1em
+
+      & > *:last-child
+        margin: 0 PAD PAD PAD
+        font-size: 1.0em
+
+    &.product
+      color: #fff
+      text-align: center
+      & > small
+        padding: 0 PADDING
+        opacity: 0.8
+
+    &.double > *
+      padding: (PADDING * 2)
+
+    &.height > *
+      padding: (PADDING * 1.5)
+
+    &.logos
+      text-align: center
+      & >:first-child
+        padding: PADDING 0 0 0
+      & > img
+        opacity: 0.5
+        height: 28px
+        margin: 10px 12px
+
+/* ==== Any phone ==== */
+@media only screen and (max-width: 767px)
+  body
+    font-size: 13px
+
+  #wall
+    & > .box
+      width: 300px !important
+
+      & > h2
+        font-size: 1.5em
+        padding: (PADDING / 2) !important
+      & > h6
+        margin-bottom: 0
+
+      & > .tapquo
+        height: 48px
+        margin: 32px auto
+
+      &:not(.picture)
+        padding: (PADDING / 2)
+        height: auto
+
+      &.picture
+        &.width
+          height: 150px
+        &:not(.width)
+          height: 300px
+
+      &.folk
+        height: 64px
+        font-size: 1.2em
+        & > img
+          width: 64px
+
+    & .logos
+      height: 244px !important
+      & > img
+        height: 20px !important
+        margin: 5px !important
+
+/* ====================== MASONRY ====================== */
+@keyframes bck_palette
+  0%
+    background-color: THEME
+  10%
+    background-color: LUNGO
+  30%
+    background-color: QUOJS
+  50%
+    background-color: MONOCLE
+  70%
+    background-color: APPNIMA
+  90%
+    background-color: SLIDUS
+  100%
+    background-color: THEME
+
+@keyframes color_palette
+  0%
+    color: THEME
+  10%
+    color: LUNGO
+  30%
+    color: QUOJS
+  50%
+    color: MONOCLE
+  70%
+    color: APPNIMA
+  90%
+    color: SLIDUS
+  100%
+    color: THEME
