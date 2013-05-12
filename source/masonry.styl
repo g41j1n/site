@@ -3,6 +3,7 @@
 #wall
   line-height: 2.0em
   & .box
+    display: block
     width: size = 284px
     height: size
     overflow: hidden
@@ -10,18 +11,20 @@
     color: #666
     background-size: cover
     border-radius BORDER-RADIUS
-    visibility: hidden
     opacity: 0
+    transform scale(0.9)
 
     &.show
-      visibility: visible
-      transition opacity TRANSITION
-      opacity: 1
+      transition-property opacity, transform
+      transition-duration TRANSITION
+      backface-visibility hidden
 
-    &:nth-child(2)
-      transition-delay (TRANSITION * 1.5)
-    &:nth-child(n+3)
-      transition-delay (TRANSITION * 3)
+      opacity: 1
+      transform scale(1)
+      &:nth-child(n+2)
+        transition-delay (TRANSITION * 1.5)
+      &:nth-child(n+3)
+        transition-delay (TRANSITION * 2.25)
 
     & > .tapquo
       display: block
@@ -39,6 +42,7 @@
       & > .title
         position: absolute
         bottom: 0px
+        left: 0px
         width: 100%
         animation bck_palette 16s infinite
         opacity: 0.75
@@ -122,9 +126,12 @@
         font-size: 1.2em
         & > img
           width: 64px
+        & > .title
+          line-height: 1.4em
+          left: 64px
 
     & .logos
-      height: 244px !important
+      height: 256px !important
       & > img
         height: 20px !important
         margin: 5px !important

@@ -1,15 +1,15 @@
 
 
 #wall{line-height:2em;}
-#wall .box{width:284px;height:284px;overflow:hidden;font-size:1.5em;color:#666;background-size:cover;-webkit-border-radius:1px;-moz-border-radius:1px;-ms-border-radius:1px;-o-border-radius:1px;border-radius:1px;visibility:hidden;opacity:0;}
-#wall .box.show{visibility:visible;-webkit-transition:opacity 400ms;-moz-transition:opacity 400ms;-ms-transition:opacity 400ms;-o-transition:opacity 400ms;transition:opacity 400ms;opacity:1}
-#wall .box:nth-child(2){-webkit-transition-delay:600ms;-moz-transition-delay:600ms;-ms-transition-delay:600ms;-o-transition-delay:600ms;transition-delay:600ms}
-#wall .box:nth-child(n+3){-webkit-transition-delay:1200ms;-moz-transition-delay:1200ms;-ms-transition-delay:1200ms;-o-transition-delay:1200ms;transition-delay:1200ms}
+#wall .box{display:block;width:284px;height:284px;overflow:hidden;font-size:1.5em;color:#666;background-size:cover;-webkit-border-radius:1px;-moz-border-radius:1px;-ms-border-radius:1px;-o-border-radius:1px;border-radius:1px;opacity:0;-webkit-transform:scale(.9);-moz-transform:scale(.9);-ms-transform:scale(.9);-o-transform:scale(.9);transform:scale(.9);}
+#wall .box.show{-webkit-transition-property:opacity,transform;-moz-transition-property:opacity,transform;-ms-transition-property:opacity,transform;-o-transition-property:opacity,transform;transition-property:opacity,transform;-webkit-transition-duration:400ms;-moz-transition-duration:400ms;-ms-transition-duration:400ms;-o-transition-duration:400ms;transition-duration:400ms;backface-visibility:hidden;opacity:1;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);}
+#wall .box.show:nth-child(n+2){-webkit-transition-delay:600ms;-moz-transition-delay:600ms;-ms-transition-delay:600ms;-o-transition-delay:600ms;transition-delay:600ms}
+#wall .box.show:nth-child(n+3){-webkit-transition-delay:900ms;-moz-transition-delay:900ms;-ms-transition-delay:900ms;-o-transition-delay:900ms;transition-delay:900ms}
 #wall .box > .tapquo{display:block;margin:38% auto;height:24%}
 #wall .box.folk{padding:0 !important;cursor:pointer;position:relative;}
 #wall .box.folk > img{-webkit-transition:all 200ms;-moz-transition:all 200ms;-ms-transition:all 200ms;-o-transition:all 200ms;transition:all 200ms;}
 #wall .box.folk > img:hover{-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%)}
-#wall .box.folk > .title{position:absolute;bottom:0;width:100%;-webkit-animation:bck_palette 16s infinite;-moz-animation:bck_palette 16s infinite;-ms-animation:bck_palette 16s infinite;-o-animation:bck_palette 16s infinite;animation:bck_palette 16s infinite;opacity:.75;padding:10px;line-height:1em;}
+#wall .box.folk > .title{position:absolute;bottom:0;left:0;width:100%;-webkit-animation:bck_palette 16s infinite;-moz-animation:bck_palette 16s infinite;-ms-animation:bck_palette 16s infinite;-o-animation:bck_palette 16s infinite;animation:bck_palette 16s infinite;opacity:.75;padding:10px;line-height:1em;}
 #wall .box.folk > .title > small{display:block;font-size:15px}
 #wall .box.width,#wall .box.double{width:588px}
 #wall .box.height,#wall .box.double{height:588px}
@@ -32,7 +32,8 @@
 #wall > .box.picture:not(.width){height:300px}
 #wall > .box.folk{height:64px;font-size:1.2em;}
 #wall > .box.folk > img{width:64px}
-#wall .logos{height:244px !important;}
+#wall > .box.folk > .title{line-height:1.4em;left:64px}
+#wall .logos{height:256px !important;}
 #wall .logos > img{height:20px !important;margin:5px !important}
 }@-moz-keyframes bck_palette{0%{background-color:#008fd5}
 10%{background-color:#187fcb}
@@ -110,8 +111,9 @@ body{font-size:16px;font-family:"Lato","Helvetica Neue",Helvetica;font-weight:30
 body h1{line-height:1.5em}
 body h2{line-height:1.6em}
 body h6{font-size:1em}
-body > footer .row{-webkit-border-radius:1px;-moz-border-radius:1px;-ms-border-radius:1px;-o-border-radius:1px;border-radius:1px;color:#fff}
-body > footer .logo{height:18px;margin-left:4px;margin-bottom:-5px}
+body > footer{margin-bottom:128px !important;}
+body > footer .row{-webkit-border-radius:1px;-moz-border-radius:1px;-ms-border-radius:1px;-o-border-radius:1px;border-radius:1px;color:#666}
+body > footer img{height:32px;margin-top:6px}
 body .bck.theme{background:#008fd5;-webkit-animation:bck_palette 16s infinite;-moz-animation:bck_palette 16s infinite;-ms-animation:bck_palette 16s infinite;-o-animation:bck_palette 16s infinite;animation:bck_palette 16s infinite}
 body .bck.dark{background-color:#d5d5d5}
 body .bck.lungo{background-color:#187fcb}

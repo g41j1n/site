@@ -8,9 +8,11 @@
     <meta name="googlebot" content="follow"/>
     <meta name="author" content="Tapquo S.L. | hello@tapquo.com"/>
     <meta name="viewport" content="width=device-width" />
+    <meta itemprop="image" content="assets/images/favicon.png">
     <!-- TITLE -->
     <title>Tapquo</title>
     <!-- STYLESHEETs -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="components/tuktuk/tuktuk.css">
     <link rel="stylesheet" href="components/tuktuk/tuktuk.icons.css">
     <link rel="stylesheet" href="components/tuktuk/tuktuk.theme.tapquo.css">
@@ -24,7 +26,7 @@
         <div class="box picture width" style="background-image: url(assets/backgrounds/group.jpg);"></div>
 
         <div class="box double bck dark">
-            <h2 class="text book">Meet a <span class="text color theme shadow">smart company</span> who thinks, designs and builds new <span class="text color theme shadow">mobile</span> user <span class="text color theme shadow">experiences</span></h2>
+            <h2 class="text book">Meet a passionate and <span class="text color theme shadow">smart company</span> who thinks, designs and builds new <span class="text color theme shadow">products</span> with a amazing user <span class="text color theme shadow">experience</span>.</h2>
         </div>
 
         <div class="box bck dark text">
@@ -229,30 +231,24 @@
         <div class="box width picture" style="background-image: url(assets/backgrounds/developers.jpg);"></div>
     </div>
 
-    <footer class="fade">
-        <div class="row bck darkest padding margin-bottom">
-            <div class="column_5">
-                <p class="text bold display block">Handmade by <img src="http://cdn.tapquo.com/images/logo_footer.png" class="logo" /></p>
-                <small>We are a smart company located in <span class="text normal">Bilbao</span>, Spain.</small>
+    <footer>
+        <div class="row bck dark padding margin-bottom">
+            <div class="column_4">
+                <p class="text bold"><span class="text color theme shadow">Handcrafted by tapquo</span></p>
+                <small>We are a smart company located in <span class="text normal color theme shadow">Bilbao</span>, Spain.</small>
             </div>
             <div class="column_4">
-                <p class="text bold display block">Get in touch!</p>
-                <small>Do you want to be part of our team?</small>
-                <span class="text big color white">
-                   <a href="https://twitter.com/tapquo" class="icon twitter"></a>&nbsp;
-                   <a href="https://www.facebook.com/tapquo" class="icon facebook"></a>&nbsp;
-                   <a href="https://github.com/tapquo" class="icon github"></a>
-               </span>
+                <p class="text bold color theme shadow">Get in touch!</p>
+                <small>Do you want to be part of our team?</small> <a href="mailto:hello@tapquo.com.com" class="text bold color theme shadow">Mail us</a>
             </div>
-            <div class="column_2 hide-phone">
-                <div class="row">
-                    <div class="column_1">
-                        <img src="assets/images/w3c-member.png" class=" responsive"/>
-                    </div>
-                    <div class="column_1">
-                        <img src="assets/images/gaia.png" class=" responsive"/>
-                    </div>
-                </div>
+            <div class="column_3 hide-phone">
+                <h3 class="on-left">
+                    <a href="https://twitter.com/tapquo" class="icon twitter text color theme shadow"></a>&nbsp;
+                    <a href="https://www.facebook.com/tapquo" class="icon facebook text color theme shadow"></a>&nbsp;
+                    <a href="https://github.com/tapquo" class="icon github text color theme shadow"></a>
+                </h3>
+                <img src="assets/images/w3c-member.png" class="margin-left on-right"/>
+                <img src="assets/images/gaia.png"  class="on-right"/>
             </div>
         </div>
     </footer>
@@ -260,18 +256,16 @@
     <script src="components/jquery/jquery.js"></script>
     <script src="components/packery/packery.pkgd.min.js"></script>
     <script>
-        var wall = $('#wall');
-        wall.packery({
+        var pckry = new Packery( document.querySelector('#wall'), {
           itemSelector: '.box',
           gutter: 20,
-          transitionDuration: "500ms"
+          transitionDuration: "400ms"
         });
 
-        $(document).ready(function() {
-            setTimeout(function() {
-                wall.children(".box").addClass("show");
-            }, 400);
+        pckry.on( 'layoutComplete', function() {
+            $('#wall').children(".box").addClass("show");
         });
+        pckry.layout();
     </script>
 
     <script type="text/javascript">
