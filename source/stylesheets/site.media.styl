@@ -1,0 +1,58 @@
+
+/* DIMENSIONS */
+@media screen and (max-width: 450px)
+  AIR = (AIR / 4)
+  .box
+    height: BOX_SIZE
+    margin: AIR (AIR / 2)
+    &.text
+      padding: AIR
+
+@media screen and (min-width: 451px) and (max-width: 700px)
+  AIR = (AIR / 2)
+  .box
+    height: BOX_SIZE
+    margin: AIR (AIR / 2)
+    &.text
+      padding: AIR
+
+@media screen and (min-width: 701px) and (max-width: 850px)
+  BOX_SIZE = (BOX_SIZE / 1.175)
+  AIR = (AIR / 1.333)
+  .box
+    height: BOX_SIZE
+    width: BOX_SIZE
+    margin: AIR (AIR / 2)
+    &.text
+      padding: AIR
+    &.width
+      width: (BOX_SIZE * 2) + AIR
+    &.height
+      height: (BOX_SIZE * 2) + AIR
+
+@media screen and (min-width: 851px)
+  .box
+    margin: (AIR / 2)
+    height: BOX_SIZE
+    width: BOX_SIZE
+    & > h1
+      padding: (AIR * 1.5) (AIR * 2.25)
+      font-size: 3.2rem
+    & > h2
+      padding: AIR * 1.25
+      font-size: 1.5rem
+    & > h1, & > h2
+      line-height: 1.5
+
+    &.width
+      width: (BOX_SIZE * 2) + AIR
+    &.height
+      height: (BOX_SIZE * 2) + AIR
+    &.app
+      width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
+      height: SIZE
+      line-height: (BOX_SIZE / 2)
+      margin: 0
+      &:nth-child(even)
+        margin-bottom: AIR
+        margin-left: AIR

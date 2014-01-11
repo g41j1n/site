@@ -1,0 +1,142 @@
+.middle
+  width: 50%
+  float: left
+
+.box
+  display: block
+  float: left
+  vertical-align: top
+  overflow: hidden
+  border-radius BORDER-RADIUS
+  background-size: cover !important
+  color: lighten(BACKGROUND, 85%)
+  text-align: left
+
+  &.icon
+    font-size: 10rem
+    text-align: center
+    color: rgba(255,255,255,0.9)
+    line-height: BOX_SIZE
+    // transition all 350ms
+    &:hover
+      color: WHITE
+      box-shadow inset 0 0 0 10rem rgba(0,0,0,0.1)
+
+  &:not(.bck):not(.avatar):not(.hide)
+    background-color: lighten(BACKGROUND, 10%)
+
+  &.bck
+    &.logo
+      background-image: url("../img/tapquo.png")
+    &.group
+      background-image: url("../img/group.jpg")
+    &.developers
+      background-image: url("../img/developers.jpg")
+    &.boy
+      background-image: url("../img/boy.jpg")
+    &.girl
+      background-image: url("../img/girl.jpg")
+    &.girls
+      background-image: url("../img/girls.jpg")
+    &.ipad
+      background-image: url("../img/ipad.jpg")
+    &.twitter
+      background-color: TWITTER
+    &.facebook
+      background-color: FACEBOOK
+    &.github
+      background-color: GITHUB
+    &.theme
+      background-color: THEME
+
+  & .color
+    &.theme
+      color: THEME
+
+  &.avatar
+    position: relative
+    &.javi
+      background-image: url("../img/avatars/javi.jpg")
+    &.ina
+      background-image: url("../img/avatars/ina.jpg")
+    &.oihane
+      background-image: url("../img/avatars/oihane.jpg")
+    &.jany
+      background-image: url("../img/avatars/jany.jpg")
+    &.cata
+      background-image: url("../img/avatars/cata.jpg")
+    &.joseba
+      background-image: url("../img/avatars/default.jpg")
+
+    &:hover
+      cursor: pointer
+      & > figure
+        bottom: 0
+
+    & > figure
+      position: absolute
+      bottom: -3.9rem
+      left: 0
+      right: 0
+      padding: .7rem
+      height: 3.9rem
+      line-height: 1.2
+      background-color: rgba(52,152,219,0.75)
+      color: WHITE
+      transition all TRANSITION
+
+      & strong
+        display: block
+        font-size: 1.25rem
+        font-weight: 100 !important
+      & small
+        font-weight: 600
+      & nav
+        position: absolute
+        top: 1.2rem
+        right: 0.25rem
+        font-size: 1.4rem
+        & a
+          margin-right: .25rem
+          &:hover, &:active
+            color: WHITE
+
+      & small, & nav > a:not(:hover):not(:active)
+        color: rgba(255,255,255,0.7)
+
+  &.hide
+    z-index: -1
+    visibility: hidden
+    opacity: 0
+
+  &.no-margin
+    margin: 0 !important
+
+  &.app
+    background-size: 85% !important
+    background-repeat: no-repeat
+    background-position: center
+    &.lungo
+      background-color: LUNGO
+      background-image: url("../img/logos/lungo.png")
+    &.quojs
+      background-color: QUOJS
+      background-image: url("../img/logos/quojs.png")
+    &.appnima
+      background-color: APPNIMA
+      background-image: url("../img/logos/appnima.png")
+    &.monocle
+      background-color: MONOCLE
+      background-image: url("../img/logos/monocle.png")
+    &.tuktuk
+      background-color: TUKTUK
+      background-image: url("../img/logos/tuktuk.png")
+    &.slidus
+      background-color: SLIDUS
+      background-image: url("../img/logos/slidus.png")
+    &.atoms
+      background-color: ATOMS
+      background-image: url("../img/logos/atoms.png")
+    &.yoi
+      background-color: YOI
+      background-image: url("../img/logos/yoi.png")

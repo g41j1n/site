@@ -1,0 +1,15 @@
+{
+  "name": "tapquo.site",
+  "version": "2.0.0",
+  "description": "Tapquo Official Site.",
+  "homepage": "http://tapquo.com",
+  "author": {
+    "name": "Tapquo S.L.",
+    "site": "http://tapquo.com"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-watch": "*"
+  }
+}
