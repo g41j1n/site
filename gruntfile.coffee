@@ -28,7 +28,7 @@ module.exports = (grunt) ->
         "source/bower_components/tuktuk/tuktuk.js"
       ]
       css: [
-        "source/bower_components/tuktuk/tuktuk.css"
+        # "source/bower_components/tuktuk/tuktuk.css"
         "source/bower_components/tuktuk/tuktuk.icons.css"
         "<%= meta.temp %>/<%= pkg.name %>.css"]
 

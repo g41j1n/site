@@ -1,18 +1,78 @@
-body
-  // max-width: 1050px
-  margin: (AIR / 2) auto
-  background-color: BACKGROUND
-  font-size: 11px !important
-
-*
+html, body, div, span, applet,
+object, iframe, h1, h2, h3, h4,
+h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong,
+sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details,
+embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output,
+ruby, section, summary, time, mark,
+audio, video
   margin: 0
   padding: 0
   border: 0
-  font-size: 100%
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  box-sizing: border-box
+  font-weight: inherit
+  vertical-align: baseline
 
+body, html
+  height: 100%
+  width: 100%
+
+body
+  margin: 0 auto
+  padding: (AIR / 2) 0 0 0
+  background-color: BACKGROUND
+
+  & *
+    margin: 0
+    padding: 0
+    box-sizing(border-box)
+    border: 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+  & > section
+    margin: 0 auto
+
+  & .text
+    &.thin
+      font-weight:200
+    &.book
+      font-weight:300
+    &.normal
+      font-weight:400
+    &.bold
+      font-weight:700 !important
+    &.italic
+      font-style:italic
+    &.underline
+      text-decoration:underline
+    &.uppercase
+      text-transform:uppercase
+    &.tiny
+      font-size:.8em
+    &.small
+      font-size:.9em
+    &.big
+      font-size:1.2em
+    &.large
+      font-size:1.4em
+    &.align
+      &.center
+        text-align: center
+
+
+h1, h2
+  margin: 0
+  padding: 0
+  font-weight: lighter
+  font-size: inherit
 
 aside, footer, figure, header, section, img, object, embed
   display: block
@@ -20,12 +80,7 @@ aside, footer, figure, header, section, img, object, embed
 img, object, embed
   max-width: 100%
 
+a
+  text-decoration: none
+  outline: 0
 
-p
-  padding: 15px
-  background: #b6e4e2
-  font-size: 11px
-
-// h1
-//   font-size: 72px
-//   text-transform: uppercase

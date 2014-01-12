@@ -1,46 +1,135 @@
 
 /* DIMENSIONS */
-@media screen and (max-width: 450px)
-  AIR = (AIR / 4)
-  .box
-    height: BOX_SIZE
-    margin: AIR (AIR / 2)
-    &.text
-      padding: AIR
+@media screen and (max-width: 767px)
+  RATIO = 1.875
+  BOX_SIZE = (BOX_SIZE / RATIO)
+  AIR = (AIR / RATIO)
+  body
+    max-width: 320px
+    font-size: 12px
 
-@media screen and (min-width: 451px) and (max-width: 700px)
-  AIR = (AIR / 2)
-  .box
-    height: BOX_SIZE
-    margin: AIR (AIR / 2)
-    &.text
-      padding: AIR
-
-@media screen and (min-width: 701px) and (max-width: 850px)
-  BOX_SIZE = (BOX_SIZE / 1.175)
-  AIR = (AIR / 1.333)
-  .box
-    height: BOX_SIZE
-    width: BOX_SIZE
-    margin: AIR (AIR / 2)
-    &.text
-      padding: AIR
-    &.width
-      width: (BOX_SIZE * 2) + AIR
-    &.height
-      height: (BOX_SIZE * 2) + AIR
-
-@media screen and (min-width: 851px)
   .box
     margin: (AIR / 2)
     height: BOX_SIZE
     width: BOX_SIZE
     & > h1
-      padding: (AIR * 1.5) (AIR * 2.25)
+      padding: (AIR * 3) (AIR * 3.5)
+      font-size: 2.25em
+    & > h2
+      padding: AIR * 1.65
+      font-size: 1.1em
+    & > h1, & > h2
+      line-height: 1.5
+
+    &.width, &.text
+      width: (BOX_SIZE * 2) + AIR
+    &.height
+      height: (BOX_SIZE * 2) + AIR
+    &.text
+      height: auto
+    &.group
+      width: BOX_SIZE
+
+    &.app
+      width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
+      height: SIZE
+      line-height: (BOX_SIZE / 2)
+      margin: 0
+      &:nth-child(even)
+        margin-bottom: AIR
+        margin-left: AIR
+
+    &.hide-phone
+      display: none
+
+@media screen and (min-width: 768px) and (max-width: 1023px)
+  RATIO = 1.565
+  BOX_SIZE = (BOX_SIZE / RATIO)
+  AIR = (AIR / RATIO)
+  body
+    max-width: 768px
+    background-color: magenta
+    font-size: 12px
+
+  .box
+    margin: (AIR / 2)
+    height: BOX_SIZE
+    width: BOX_SIZE
+    & > h1
+      padding: (AIR * 3) (AIR * 3.5)
+      font-size: 2.75em
+    & > h2
+      padding: AIR * 1.65
+      font-size: 1.21em
+    & > h1, & > h2
+      line-height: 1.5
+
+    &.width
+      width: (BOX_SIZE * 2) + AIR
+    &.height
+      height: (BOX_SIZE * 2) + AIR
+    &.app
+      width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
+      height: SIZE
+      line-height: (BOX_SIZE / 2)
+      margin: 0
+      &:nth-child(even)
+        margin-bottom: AIR
+        margin-left: AIR
+
+
+@media screen and (min-width: 1024px) and (max-width: 1199px)
+  RATIO = 1.18
+  BOX_SIZE = (BOX_SIZE / RATIO)
+  AIR = (AIR / RATIO)
+  body
+    max-width: 1024px
+    background-color: green
+    font-size: 13px
+
+  .box
+    margin: (AIR / 2)
+    height: BOX_SIZE
+    width: BOX_SIZE
+    & > h1
+      padding: (AIR * 3) (AIR * 3.5)
+      font-size: 3.3em
+    & > h2
+      padding: AIR * 1.65
+      font-size: 1.45em
+    & > h1, & > h2
+      line-height: 1.5
+
+    &.width
+      width: (BOX_SIZE * 2) + AIR
+    &.height
+      height: (BOX_SIZE * 2) + AIR
+    &.app
+      width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
+      height: SIZE
+      line-height: (BOX_SIZE / 2)
+      margin: 0
+      &:nth-child(even)
+        margin-bottom: AIR
+        margin-left: AIR
+
+
+@media screen and (min-width: 1200px)
+  body
+    max-width: 1200px
+    background-color: red !important
+    font-size: 15px
+
+  .box
+    margin: (AIR / 2)
+    height: BOX_SIZE
+    width: BOX_SIZE
+    & > h1
+      padding: (AIR * 3) (AIR * 3.5)
       font-size: 3.2rem
     & > h2
-      padding: AIR * 1.25
-      font-size: 1.5rem
+      padding: AIR * 1.65
+      font-size: 1.4rem
     & > h1, & > h2
       line-height: 1.5
 

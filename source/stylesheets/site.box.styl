@@ -11,23 +11,19 @@
   background-size: cover !important
   color: lighten(BACKGROUND, 85%)
   text-align: left
+  transition all TRANSITION
 
   &.icon
     font-size: 10rem
     text-align: center
     color: rgba(255,255,255,0.9)
     line-height: BOX_SIZE
-    // transition all 350ms
-    &:hover
-      color: WHITE
-      box-shadow inset 0 0 0 10rem rgba(0,0,0,0.1)
+
 
   &:not(.bck):not(.avatar):not(.hide)
     background-color: lighten(BACKGROUND, 10%)
 
   &.bck
-    &.logo
-      background-image: url("../img/tapquo.png")
     &.group
       background-image: url("../img/group.jpg")
     &.developers
@@ -40,12 +36,16 @@
       background-image: url("../img/girls.jpg")
     &.ipad
       background-image: url("../img/ipad.jpg")
+    &.stewie
+      background-image: url("../img/stewie.jpg")
     &.twitter
       background-color: TWITTER
     &.facebook
       background-color: FACEBOOK
     &.github
       background-color: GITHUB
+    &.gplus
+      background-color: GPLUS
     &.theme
       background-color: THEME
 
@@ -55,6 +55,8 @@
 
   &.avatar
     position: relative
+    &.logo
+      background-image: url("../img/logos/tapquo.png")
     &.javi
       background-image: url("../img/avatars/javi.jpg")
     &.ina
@@ -68,8 +70,10 @@
     &.joseba
       background-image: url("../img/avatars/default.jpg")
 
+    transition all TRANSITION
     &:hover
       cursor: pointer
+      background-position-y: 100%
       & > figure
         bottom: 0
 
@@ -116,6 +120,7 @@
     background-size: 85% !important
     background-repeat: no-repeat
     background-position: center
+
     &.lungo
       background-color: LUNGO
       background-image: url("../img/logos/lungo.png")
@@ -140,3 +145,34 @@
     &.yoi
       background-color: YOI
       background-image: url("../img/logos/yoi.png")
+
+  a&
+    color: rgba(255,255,255,0.85)
+    transition all TRANSITION
+    &:hover
+      color: WHITE
+      box-shadow inset 0 0 0 10rem rgba(0,0,0,0.1)
+
+  // CHILDREN
+  & > h1, & > h2
+    font-weight: lighter
+
+  & > .clients
+    margin-top: -(AIR / 1.25)
+    padding: 0 (AIR * 2)
+    & img
+      display: inline-block
+      margin: 0 AIR (AIR * 1.2) 0
+      height: 1.75em
+      opacity: 0.5
+      transition all TRANSITION
+      &:hover
+        opacity: 1
+
+  &.map-marker
+    position: relative
+    & > h2
+      position: absolute
+      bottom: 0
+      width: 100%
+
