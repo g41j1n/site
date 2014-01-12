@@ -4,6 +4,7 @@
   RATIO = 1.875
   BOX_SIZE = (BOX_SIZE / RATIO)
   AIR = (AIR / RATIO)
+
   body
     max-width: 320px
     font-size: 12px
@@ -17,10 +18,10 @@
       font-size: 2.25em
     & > h2
       padding: AIR * 1.65
-      font-size: 1.1em
-    & > h1, & > h2
-      line-height: 1.5
+      font-size: 1.05em
 
+    &.hide-phone
+      display: none
     &.width, &.text
       width: (BOX_SIZE * 2) + AIR
     &.height
@@ -29,7 +30,9 @@
       height: auto
     &.group
       width: BOX_SIZE
-
+    &.icon
+      font-size: (10rem / RATIO)
+      line-height: BOX_SIZE
     &.app
       width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
       height: SIZE
@@ -39,8 +42,6 @@
         margin-bottom: AIR
         margin-left: AIR
 
-    &.hide-phone
-      display: none
 
 @media screen and (min-width: 768px) and (max-width: 1023px)
   RATIO = 1.565
@@ -48,7 +49,6 @@
   AIR = (AIR / RATIO)
   body
     max-width: 768px
-    background-color: magenta
     font-size: 12px
 
   .box
@@ -61,13 +61,14 @@
     & > h2
       padding: AIR * 1.65
       font-size: 1.21em
-    & > h1, & > h2
-      line-height: 1.5
 
     &.width
       width: (BOX_SIZE * 2) + AIR
     &.height
       height: (BOX_SIZE * 2) + AIR
+    &.icon
+      font-size: (10rem / RATIO)
+      line-height: BOX_SIZE
     &.app
       width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
       height: SIZE
@@ -84,7 +85,6 @@
   AIR = (AIR / RATIO)
   body
     max-width: 1024px
-    background-color: green
     font-size: 13px
 
   .box
@@ -94,16 +94,18 @@
     & > h1
       padding: (AIR * 3) (AIR * 3.5)
       font-size: 3.3em
-    & > h2
+    & h2
       padding: AIR * 1.65
       font-size: 1.45em
-    & > h1, & > h2
-      line-height: 1.5
+
 
     &.width
       width: (BOX_SIZE * 2) + AIR
     &.height
       height: (BOX_SIZE * 2) + AIR
+    &.icon
+      font-size: (10rem / RATIO)
+      line-height: BOX_SIZE
     &.app
       width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
       height: SIZE
@@ -115,9 +117,9 @@
 
 
 @media screen and (min-width: 1200px)
+  RATIO = 1
   body
     max-width: 1200px
-    background-color: red !important
     font-size: 15px
 
   .box
@@ -130,13 +132,14 @@
     & > h2
       padding: AIR * 1.65
       font-size: 1.4rem
-    & > h1, & > h2
-      line-height: 1.5
 
     &.width
       width: (BOX_SIZE * 2) + AIR
     &.height
       height: (BOX_SIZE * 2) + AIR
+    &.icon
+      font-size: (10rem / RATIO)
+      line-height: BOX_SIZE
     &.app
       width: SIZE = (BOX_SIZE / 2) - (AIR / 2)
       height: SIZE
@@ -145,3 +148,4 @@
       &:nth-child(even)
         margin-bottom: AIR
         margin-left: AIR
+

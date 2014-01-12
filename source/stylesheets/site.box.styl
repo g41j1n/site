@@ -11,13 +11,11 @@
   background-size: cover !important
   color: lighten(BACKGROUND, 85%)
   text-align: left
-  transition all TRANSITION
+  // transition all TRANSITION
 
   &.icon
-    font-size: 10rem
     text-align: center
     color: rgba(255,255,255,0.9)
-    line-height: BOX_SIZE
 
 
   &:not(.bck):not(.avatar):not(.hide)
@@ -38,16 +36,7 @@
       background-image: url("../img/ipad.jpg")
     &.stewie
       background-image: url("../img/stewie.jpg")
-    &.twitter
-      background-color: TWITTER
-    &.facebook
-      background-color: FACEBOOK
-    &.github
-      background-color: GITHUB
-    &.gplus
-      background-color: GPLUS
-    &.theme
-      background-color: THEME
+
 
   & .color
     &.theme
@@ -70,7 +59,8 @@
     &.joseba
       background-image: url("../img/avatars/default.jpg")
 
-    transition all TRANSITION
+    transition background TRANSITION
+
     &:hover
       cursor: pointer
       background-position-y: 100%
@@ -79,11 +69,10 @@
 
     & > figure
       position: absolute
-      bottom: -3.9rem
+      bottom: -4rem
       left: 0
       right: 0
-      padding: .7rem
-      height: 3.9rem
+      padding: .7em
       line-height: 1.2
       background-color: rgba(52,152,219,0.75)
       color: WHITE
@@ -91,27 +80,22 @@
 
       & strong
         display: block
-        font-size: 1.25rem
-        font-weight: 100 !important
+        font-size: 1.25em
+        font-weight: lighter !important
       & small
         font-weight: 600
       & nav
         position: absolute
         top: 1.2rem
         right: 0.25rem
-        font-size: 1.4rem
+        font-size: 1.4em
         & a
-          margin-right: .25rem
+          margin-right: .2rem
           &:hover, &:active
             color: WHITE
 
       & small, & nav > a:not(:hover):not(:active)
         color: rgba(255,255,255,0.7)
-
-  &.hide
-    z-index: -1
-    visibility: hidden
-    opacity: 0
 
   &.no-margin
     margin: 0 !important
@@ -120,42 +104,72 @@
     background-size: 85% !important
     background-repeat: no-repeat
     background-position: center
+    transition background TRANSITION
 
     &.lungo
-      background-color: LUNGO
       background-image: url("../img/logos/lungo.png")
+      &:hover
+        background-color: LUNGO
     &.quojs
-      background-color: QUOJS
       background-image: url("../img/logos/quojs.png")
+      &:hover
+        background-color: QUOJS
     &.appnima
-      background-color: APPNIMA
       background-image: url("../img/logos/appnima.png")
+      &:hover
+        background-color: APPNIMA
     &.monocle
-      background-color: MONOCLE
       background-image: url("../img/logos/monocle.png")
+      &:hover
+        background-color: MONOCLE
     &.tuktuk
-      background-color: TUKTUK
       background-image: url("../img/logos/tuktuk.png")
+      &:hover
+        background-color: TUKTUK
     &.slidus
-      background-color: SLIDUS
       background-image: url("../img/logos/slidus.png")
+      &:hover
+        background-color: SLIDUS
     &.atoms
-      background-color: ATOMS
       background-image: url("../img/logos/atoms.png")
+      &:hover
+        background-color: ATOMS
     &.yoi
-      background-color: YOI
       background-image: url("../img/logos/yoi.png")
+      &:hover
+        background-color: YOI
 
   a&
-    color: rgba(255,255,255,0.85)
-    transition all TRANSITION
+    color: rgba(255,255,255,0.75) !important
+    transition background TRANSITION
+    &.twitter
+      background-color: darken(TWITTER, 25%)
+      &:hover
+        background-color: TWITTER
+    &.facebook
+      background-color: darken(FACEBOOK, 25%)
+      &:hover
+        background-color: FACEBOOK
+    &.github
+      background-color: darken(GITHUB, 25%)
+      &:hover
+        background-color: GITHUB
+    &.gplus
+      background-color: darken(GPLUS, 25%)
+      &:hover
+        background-color: GPLUS
+    &.theme
+      background-color: THEME
+      &:hover
+        background-color: THEME
+
     &:hover
-      color: WHITE
-      box-shadow inset 0 0 0 10rem rgba(0,0,0,0.1)
+      color: WHITE !important
 
   // CHILDREN
   & > h1, & > h2
     font-weight: lighter
+    line-height: 1.5
 
   & > .clients
     margin-top: -(AIR / 1.25)
@@ -175,4 +189,3 @@
       position: absolute
       bottom: 0
       width: 100%
-
