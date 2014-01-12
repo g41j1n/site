@@ -24,7 +24,7 @@ body, html
   width: 100%
 
 body
-  margin: 0 auto AIR auto
+  margin: 0 auto
   padding: (AIR / 2) 0
   background-color: BACKGROUND
 
@@ -36,6 +36,13 @@ body
     -webkit-box-sizing: border-box
     -moz-box-sizing: border-box
     box-sizing: border-box
+
+  & > footer
+    line-height: (AIR * 4)
+    text-align: center
+    color: lighten(BACKGROUND, 20%)
+    font-size: 11px
+    font-weight: bold
 
   & .text
     &.thin
